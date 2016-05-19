@@ -1,0 +1,24 @@
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr>
+            <th>Username</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/account/?account_id=<%= rs[i].account_id %>"> <%= rs[i].username %></a></td>
+            <td><%= rs[i].first_name %></td>
+            <td><%= rs[i].last_name %></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No Users exist.
+    <% } %>
+</div>
+
+<div style="margin-top:10px;">
+    <a href="/account/create">Create New User</a>
+</div>

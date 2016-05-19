@@ -1,0 +1,17 @@
+<% if(rs.length > 0) { %>
+Username: <%= rs[0].username %>
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <th>Rating</th>
+    </tr>
+    <% for(var i=0; i < rs.length; i++) {%>
+    <tr>
+        <td><%= rs[i].title %></td>
+        <td><%= rs[i].rating%></td>
+    </tr>
+    <% } %>
+</table>
+<% } else { %>
+No Account matched account id <%= account_id %>.
+<% } %>

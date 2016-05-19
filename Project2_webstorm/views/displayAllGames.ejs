@@ -1,0 +1,38 @@
+<%include partials/header%>
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr>
+            <th>Game Title</th>
+            <th>Genre</th>
+            <th>Platform</th>
+            <th>Release Date</th>
+            <th>Publisher</th>
+            <th>Average Rating</th>
+            <th>Reviews</th>
+
+        </tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><%= rs[i].title %></td>
+
+            <td><%= rs[i].genre %></td>
+
+            <td><%= rs[i].platform %></td>
+
+            <td><%= rs[i].release_date %></td>
+
+            <td><%= rs[i].publisher_name %></td>
+
+            <td><%= rs[i].average %></td>
+
+            <td><a href="/review/?game_id=<%= rs[i].game_id %>">Get Reviews</a></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No games exist.
+    <% } %>
+</div>
+
+<%include partials/footer%>

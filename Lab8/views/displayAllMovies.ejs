@@ -1,0 +1,18 @@
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Movie Title</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/movie/?movie_id=<%= rs[i].movie_id %>"> <%= rs[i].title %></a></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No movies exist.
+    <% } %>
+</div>
+
+<div style="margin-top:10px;">
+    <a href="/movie/create">Create New Movie</a>
+</div>

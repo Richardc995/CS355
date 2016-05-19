@@ -1,0 +1,10 @@
+<%include partials/header%>
+<% if(rs.length > 0) { %>
+Title: <%= rs[0].title %>
+<li><%= rs[0].genre %></li>
+<li><%= rs[0].platform %></li>
+<li><%= rs[0].release_date %></li>
+<% } else { %>
+No game matched game id <%= game_id %>.
+<% } %>
+<%include partials/footer%>

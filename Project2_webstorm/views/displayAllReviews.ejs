@@ -1,0 +1,46 @@
+<%include partials/header%>
+<div>
+    <% if(rs.length > 0) { %>
+        <form action="/review/save/">
+            <input type="text" id="user" name="user" /><label for="user">Your email</label> <br />
+            <input type="text" id="title" name="title" /><label for="title">Title</label> <br />
+            <input type="number" min="1" max="10" id="rating" name="rating" /><label for="rating">Rating</label> <br />
+            <textarea name="textarea" style="width:250px;height:150px;"></textarea><label for="comment"> </label>
+
+
+            <input type="submit" text="Submit Review" />
+        </form>
+        <br>
+    <table border="1">
+        <tr>
+            <th>Game Title</th>
+            <th>User</th>
+            <th>Rating</th>
+            <th>Comment</th>
+
+        </tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><%= rs[i].title %></td>
+            <td><%= rs[i].email %></td>
+            <td><%= rs[i].rating %></td>
+            <td><%= rs[i].comment %></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No reviews exist. Write one !
+    <br>
+        <form action="/review/save/">
+            <input type="text" id="user" name="user" /><label for="user">Your email</label> <br />
+            <input type="text" id="title" name="title" /><label for="title">Title</label> <br />
+            <input type="number" min="1" max="10" id="rating" name="rating" /><label for="rating">Rating</label> <br />
+            <textarea name="textarea" style="width:250px;height:150px;"></textarea><label for="comment"> </label>
+
+
+            <input type="submit" text="Submit Review" />
+        </form>
+    <% } %>
+    <br><br>
+
+</div>
